@@ -87,7 +87,7 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
-
+prompt("hello")
 let newPassword = [];
 
 // Function to prompt user for password options
