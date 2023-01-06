@@ -87,12 +87,21 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
-prompt("hello")
+
 let newPassword = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  
+  let passwordLength = prompt("Choose how many characters (10 - 64) you would like the password to be")
+    if (passwordLength > 10 && passwordLength <= 64) {
+      let specialCharactersConfirm = confirm("Would you like to have special characters in your password")
+      let numericCharactersConfirm = confirm("Would you like to have number characters in your password")
+      let lowerCasedCharactersConfirm = confirm("Would you like to have lowercase characters in your password")
+      let upperCasedCharactersConfirm = confirm("Would you like to have uppercase characters in your password")
+    }
+    else {
+      alert ("Try doing what you're told")
+    }
 }
 
 // Function for getting a random element from an array
