@@ -27,5 +27,5 @@ Once all prompts are answered, the password should be generated and displayed in
 To use simply load the page up and you will be given a prompt to fill in, This will be the foundation for the password
 
 
-    ![example image](images/example.png)
+![example image](images/example.png)
 
