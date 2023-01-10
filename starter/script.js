@@ -90,28 +90,49 @@ var upperCasedCharacters = [
 
 let newPassword = [];
 
+let passwordLength = prompt("Choose how many characters (10 - 64) you would like the password to be")
 // Function to prompt user for password options
+getPasswordOptions();
 function getPasswordOptions() {
-  let passwordLength = prompt("Choose how many characters (10 - 64) you would like the password to be")
-    if (passwordLength > 10 && passwordLength <= 64) {
-      let specialCharactersConfirm = confirm("Would you like to have special characters in your password")
-      let numericCharactersConfirm = confirm("Would you like to have number characters in your password")
-      let lowerCasedCharactersConfirm = confirm("Would you like to have lowercase characters in your password")
-      let upperCasedCharactersConfirm = confirm("Would you like to have uppercase characters in your password")
-    }
-    else {
+  if (passwordLength > 9 && passwordLength <= 64) {
+    let special = confirm("Would you like to have special characters in your password")
+      if (special === true) {
+        newPassword = newPassword.concat(specialCharacters)
+      }
+    let numeric = confirm("Would you like to have number characters in your password")
+      if (numeric === true) {
+        newPassword = newPassword.concat(numericCharacters)
+      }
+    let lower = confirm("Would you like to have lowercase characters in your password")
+      if (lower === true) {
+        newPassword = newPassword.concat(lowerCasedCharacters)
+      }
+    let upper = confirm("Would you like to have uppercase characters in your password")
+      if (upper === true) {
+        newPassword = newPassword.concat(upperCasedCharacters)
+      }
+    }  
+  if (passwordLength <= 9 || passwordLength > 64){
       alert ("Try doing what you're told")
+    }
+  else if (newPassword.length === 0){
+      alert ("You need to select at least ONE option")
     }
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
+function getRandom() {
+  return Math.floor(Math.random() * newPassword.length);
 }
 
 // Function to generate password with user input
 function generatePassword() {
-
+  let finalPassword = [];
+  for (let i = 0; i < passwordLength; i++) {
+    let randomIndex = getRandom(newPassword);
+    finalPassword.push(newPassword[randomIndex]);
+  }
+  return finalPassword.join("");
 }
 
 // Get references to the #generate element
