@@ -26,9 +26,6 @@ Once all prompts are answered, the password should be generated and displayed in
 
 To use simply load the page up and you will be given a prompt to fill in, This will be the foundation for the password
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
-    ```md
     ![example image](images/example.png)
-    ```
 
